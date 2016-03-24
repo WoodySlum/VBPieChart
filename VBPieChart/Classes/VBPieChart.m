@@ -183,7 +183,7 @@ static __inline__ CGFloat CGPointDistanceBetweenTwoPoints(CGPoint point1, CGPoin
     double fullValue = 0;
     
     NSUInteger index = 0;
-    for (NSDictionary *object in _chartValues) {
+    for (NSDictionary *object in [_chartValues copy]) {
         
         VBPiePieceData *data;
         BOOL created = NO;
@@ -230,7 +230,7 @@ static __inline__ CGFloat CGPointDistanceBetweenTwoPoints(CGPoint point1, CGPoin
     CGFloat onePrecentOfChart = _length*0.01;
     CGFloat start = _startAngle;
 
-    for (VBPiePieceData *data in _chartsData) {
+    for (VBPiePieceData *data in [_chartsData copy]) {
         
         CGFloat pieceValuePrecents = fabs([data.value doubleValue])/onePrecent;
         CGFloat pieceChartValue = onePrecentOfChart*pieceValuePrecents;
